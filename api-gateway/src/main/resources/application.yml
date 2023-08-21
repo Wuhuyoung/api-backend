@@ -1,0 +1,30 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: api-gateway
+          uri: http://localhost:8123
+          predicates:
+            - Path=/api/**
+dubbo:
+  registry:
+    protocol: nacos
+    id: nacos-registry
+    address: nacos://localhost:8848
+  application:
+    name: api-gateway
+  protocol:
+    name: dubbo
+    port: -1
+#logging:
+#  level:
+#    org:
+#      springframework:
+#        cloud:
+#          gateway: trace
+interface:
+  host: http://localhost:8123

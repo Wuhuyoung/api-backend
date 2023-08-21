@@ -1,0 +1,23 @@
+server:
+  port: 7529
+  servlet:
+    context-path: /api
+spring:
+  application:
+    name: api-backend
+  # DataSource Config
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://服务器url:3306/api
+    username: root
+    password: // TODO 密码
+dubbo:
+  registry:
+    protocol: nacos
+    id: nacos-registry
+    address: nacos://服务器url:8848
+  application:
+    name: api-backend
+  protocol:
+    name: dubbo
+    port: -1

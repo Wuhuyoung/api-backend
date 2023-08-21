@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: api-interface
+    # DataSource Config
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://服务器url:3306/api
+    username: root
+    password: 
+server:
+  port: 8123
+  servlet:
+    context-path: /api

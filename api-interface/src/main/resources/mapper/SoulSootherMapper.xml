@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.han.project.mapper.SoulSootherMapper">
+
+    <resultMap id="BaseResultMap" type="com.han.project.domain.SoulSoother">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="content" column="content" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,content
+    </sql>
+    <select id="getRandSoulSoother" resultType="java.lang.String">
+        select content from soul_soother order by rand() limit 1;
+    </select>
+</mapper>

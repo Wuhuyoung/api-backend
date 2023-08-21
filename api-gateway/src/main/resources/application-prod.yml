@@ -1,0 +1,23 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: api-gateway
+          uri: http://服务器url:8123
+          predicates:
+            - Path=/api/**
+dubbo:
+  registry:
+    id: nacos-registry
+    address: nacos://服务器url:8848
+  application:
+    name: api-gateway
+  protocol:
+    name: dubbo
+    port: -1
+interface:
+  host: http://服务器url:8123
